@@ -1,50 +1,37 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
 
-
-void num(n){
-   switch (n) {
-    case 1: printf("one\n");
-        break;
-    case 2: printf("two\n");
-        break;
-    case 3: printf("three\n");
-        break;
-    case 4: printf("four\n");
-        break;
-    case 5: printf("five\n");
-        break;
-    case 6: printf("six\n");
-        break;
-    case 7: printf("seven\n");
-        break;
-    case 8: printf("eight\n");
-        break;
-    case 9: printf("nine\n");
-        break;
-    default: printf("nine\n");
-        break;
-    } 
-}
-void type(n){
-    if(n%2==0){
-        printf("even\n");
-    }else {
-    printf("odd\n");
+void progress1(int n1, int n2) {
+    char num[10][10]={"one","two","three","four","five","six","seven","eight","nine"};
+    if (n2>9) {
+        for (int i = n1; i < 10; i++) {
+            printf("%s\n", num[i-1]);
+        }
+    }
+    else {
+        for (int i = n1; i <= n2; i++) {
+            printf("%s\n", num[i-1]);
+        } 
     }
 }
+void progress2(int n) {
+    char num[10][10]={"one","two","three","four","five","six","seven","eight","nine"};
+    for(int i=10;i<=n;i++)
+    {
+        if(i%2==0)
+            printf("even\n");
+        else 
+            printf("odd\n");
+    }
+}
+
 int main() 
 {
     int a, b;
     scanf("%d\n%d", &a, &b);
-  	// Complete the code.
-    num(a);
-    num(b);
-    type(a);
-    type(b);
+      // Complete the code.
+    
+    if (a<10) progress1(a, b);
+    if (b>9) progress2(b);
     
     return 0;
 }
-
